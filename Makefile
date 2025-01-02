@@ -1,17 +1,21 @@
-LATEX_SRC = resume.tex
-PDF_OUTPUT = resume.pdf
+LATEX=pdflatex
+MAIN_FILE=resume.tex
+SECTION_DIR=sections
+OUTPUT_DIR=build
 
-LATEX = pdflatex
+SECTIONS=$(wildcard $(SECTION_DIR)/*.tex)
+OUTPUT_PDF=$(OUTPUT_DIR)/resume.pdf
 
-all: $(PDF_OUTPUT)
+all: $(OUTPUT_PDF)
 
-$(PDF_OUTPUT): $(LATEX_SRC)
-	$(LATEX) $(LATEX_SRC)
+$(OUTPUT_PDF): $(MAIN_FILE) $(SECTIONS)
+	mkdir -p $(OUTPUT_DIR)
+	$(LATEX) -output-directory=$(OUTPUT_DIR) $(MAIN_FILE)
 
 clean:
-	rm -f $(basename $(LATEX_SRC)).aux $(basename $(LATEX_SRC)).bbl \
-	    $(basename $(LATEX_SRC)).blg $(basename $(LATEX_SRC)).log \
-	    $(basename $(LATEX_SRC)).out $(basename $(LATEX_SRC)).toc
+	rm -rf $(OUTPUT_DIR)
 
-clean-all: clean
-	rm -f $(PDF_OUTPUT)
+$(SECTION_DIR)/%.tex: $(SECTION_DIR)/%.tex
+	$(LATEX) $(MAIN_FILE)
+
+.PHONY: all clean

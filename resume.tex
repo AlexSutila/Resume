@@ -1,4 +1,79 @@
 \documentclass{article}
+\usepackage[a4paper, margin=1cm]{geometry}
+\pagenumbering{gobble} % Remove page numbers
+
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt}
+
+\usepackage{setspace}
+\setlength{\parindent}{0pt} % Noindent by default
+
+
 \begin{document}
-Hello, world!
+
+\begin{center}
+    \LARGE{\textbf{Alexander C. Sutila}}
+\end{center}
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{center}
+    480-868-6688 $\cdot$ asutila@asu.edu $\cdot$ www.github.com/AlexSutila
+\end{center}
+
+
+\noindent\large{\textbf{Summary}}\\[-0.6em]
+\noindent\rule{\textwidth}{0.4pt}
+\begin{normalsize}
+    \input{sections/summary.tex}
+\end{normalsize}
+\vspace{1em}
+
+
+\noindent\large{\textbf{Education}}\\[-0.6em]
+\noindent\rule{\textwidth}{0.4pt}
+\begin{normalsize}
+    \input{sections/education.tex}
+\end{normalsize}
+\vspace{1em}
+
+
+\noindent\large{\textbf{Techincal Skills}}\\[-0.6em]
+\noindent\rule{\textwidth}{0.4pt}
+\begin{normalsize}
+    \input{sections/technical_skills.tex}
+\end{normalsize}
+\vspace{1em}
+
+
+\noindent\large{\textbf{Professional Experience}}\\[-0.6em]
+\noindent\rule{\textwidth}{0.4pt}
+\begin{normalsize}
+    \input{sections/professional_exp.tex}
+\end{normalsize}
+\vspace{1em}
+
+
+\noindent\large{\textbf{Academic/Personal Projects}}\\[-0.6em]
+\noindent\rule{\textwidth}{0.4pt}
+\begin{normalsize}
+    \input{sections/projects.tex}
+\end{normalsize}
+\vspace{1em}
+
+
+\noindent\large{\textbf{Other Work Experience}}\\[-0.6em]
+\noindent\rule{\textwidth}{0.4pt}
+\begin{normalsize}
+    \input{sections/other_work_exp.tex}
+\end{normalsize}
+\vspace{1em}
+
+
+\noindent\large{\textbf{Activities}}\\[-0.6em]
+\noindent\rule{\textwidth}{0.4pt}
+\begin{normalsize}
+    \input{sections/activities.tex}
+\end{normalsize}
+\vspace{1em}
+
 \end{document}
