@@ -14,8 +14,11 @@
       devShells.x86_64-linux.default =
         pkgs.mkShell
         {
-          nativeBuildInputs = with pkgs; [
-            texliveFull
+          buildInputs = with pkgs; [
+            (pkgs.texlive.combine {
+              inherit (pkgs.texlive) scheme-basic
+                enumitem setspace mlmodern;
+            })
           ];
         };
     };
