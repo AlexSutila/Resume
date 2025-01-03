@@ -17,7 +17,7 @@
           buildInputs = with pkgs; [
             (pkgs.texlive.combine {
               inherit (pkgs.texlive) scheme-basic
-                enumitem setspace mlmodern;
+                enumitem setspace mlmodern xcolor adjustbox;
             })
           ];
         };

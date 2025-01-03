@@ -3,6 +3,10 @@
 \pagenumbering{gobble} % Remove page numbers
 \usepackage{lmodern}
 
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+
 \usepackage{enumitem}
 \setlist[itemize,enumerate]{topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt}
 
@@ -12,22 +16,20 @@
 
 \begin{document}
 
-\begin{center}
-    \LARGE{\textbf{Alexander C. Sutila}}
-\end{center}
-\noindent\rule{\textwidth}{0.4pt}
-
-\begin{center}
-    480-868-6688 $\cdot$ asutila@asu.edu $\cdot$ www.github.com/AlexSutila
-\end{center}
-
+\raisebox{-0.85cm}{\includegraphics[height=2cm]{assets/Portrait.jpg}}
+\hspace{0.7em}\parbox[c]{0.5\linewidth}{
+    \LARGE{\textbf{Alexander C. Sutila}}\\
+    \normalsize{480-868-6688 $\cdot$ asutila@asu.edu $\cdot$ github.com/AlexSutila}
+}
+\hfill \raisebox{-0.55cm}{\includegraphics[height=1.5cm]{assets/ASU-Logo.jpg}}
+\vspace{0.5em}
 
 \noindent\large{\textbf{Summary}}\\[-0.6em]
 \noindent\rule{\textwidth}{0.4pt}
 \begin{normalsize}
     \input{sections/summary.tex}
 \end{normalsize}
-\vspace{0.7em}
+\vspace{0.9em}
 
 
 \noindent\large{\textbf{Education}}\\[-0.6em]
