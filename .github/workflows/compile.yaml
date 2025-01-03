@@ -10,8 +10,14 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v4
+      - name: Commit resume
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          mkdir -p build && mv resume.pdf build/
+          git add build/resume.pdf
+          git commit -m "Update compiled pdf"
+      - name: Push resume
+        uses: ad-m/github-push-action@master
         with:
-          name: resume.pdf
-          path: resume.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
